@@ -13,6 +13,7 @@
   --color-active: #404bbf;
   --color-accent: #e7e9fc;
   --color-green: #31d0aa;
+  --color-light-slate: #8e8f99;
 }
 
 
@@ -407,6 +408,29 @@ img {
 .our-team-social-links-link:focus {
   background-color: var(--color-active);
 }
+
+
+/* ========== Customers Section ========== */
+.cutomers-section-title {
+  margin-bottom: 72px;
+}
+
+.customers-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.customers-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc((100% - 24px * 5) / 6);
+  padding: 16px 0;
+  border-radius: 4px;
+  border: 1px solid var(--color-light-slate);
+}
+
 
 /* ========== Portfolio ========== */
 .portfolio-section {
