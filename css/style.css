@@ -593,7 +593,7 @@ img {
 
 .portfolio-item-link {
   display: block;
-  transition: box-shadow (--anamation-pattern);
+  transition: box-shadow var(--anamation-pattern);
 }
 
 .portfolio-item-link:hover,
