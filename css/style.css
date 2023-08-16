@@ -239,6 +239,7 @@ img {
   letter-spacing: 0.02em;
   line-height: 1.5;
   color: var(--text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover,
@@ -292,7 +293,7 @@ img {
   height: 40px;
   border-radius: 50%;
   background-color: var(--color-brand);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-media-link:hover,
@@ -313,7 +314,7 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-  transition: opacity var(--anamation-pattern);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -322,9 +323,11 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   border-radius: 4px;
   background-color: var(--color-dairy);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button {
@@ -336,19 +339,26 @@ img {
   right: 24px;
   width: 24px;
   height: 24px;
+  padding: 0;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, .1);
   background-color: var(--color-accent);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button:hover,
-.modal-close-button:active {
+.modal-close-button:focus {
   border: none;
   background-color: var(--color-active);
 }
 
-.modal-close-button:hover svg,
-.modal-close-button:active svg {
+.modal-close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button:hover .modal-close-icon,
+.modal-close-button:focus .modal-close-icon {
   fill: var(--color-white);
 }
 
@@ -548,6 +558,10 @@ img {
   color: var(--color-brand);
   background-color: var(--color-light);
   border: 1px solid var(--color-accent);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover,
@@ -556,6 +570,7 @@ img {
   color: var(--color-white);
   background-color: var(--color-active);
   border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-list {
@@ -571,10 +586,11 @@ img {
 
 .portfolio-item-link {
   display: block;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item-link:hover,
-.portfolio-item-link:active {
+.portfolio-item-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -587,7 +603,7 @@ img {
 
 .portfolio-item .shade-text {
   position: absolute;
-  bottom: -100%;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -596,12 +612,13 @@ img {
   letter-spacing: 0.02em;
   color: var(--color-light);
   background-color: var(--color-brand);
+  transform: translateY(100%);
   transition: transform var(--anamation-pattern);
 }
 
 .portfolio-item-link:hover .shade-text,
-.portfolio-item-link:active .shade-text {
-  transform: translateY(-100%);
+.portfolio-item-link:focus .shade-text {
+  transform: translateY(0);
 }
 
 .portfolio-item .text-wrapper {
